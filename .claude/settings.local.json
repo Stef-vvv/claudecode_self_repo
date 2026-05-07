@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Skill(update-config)",
+      "PowerShell(powershell -NoProfile -ExecutionPolicy Bypass -Command \"Write-Output \\([char]0x2588\\).ToString\\(\\)\" 2>&1)",
+      "PowerShell(npx skills add vercel-labs/skills@find-skills -g -y)",
+      "PowerShell($ProgressPreference = 'SilentlyContinue'; try { $r = Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/vercel-labs/skills/main/skills/find-skills/SKILL.md' -UseBasicParsing -TimeoutSec 15; Write-Output $r.Content } catch { Write-Output \"FAILED: $_\" })",
+      "PowerShell(winget install *)",
+      "PowerShell(git config *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; & $git config --global user.name \"stef-vvv\"; & $git config --global user.email \"1512699896@qq.com\"; & $git config --global credential.helper manager; Write-Output \"--- Git global config ---\"; & $git config --global --list)",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\(\"Path\", \"User\"\\) + \";\" + [Environment]::GetEnvironmentVariable\\(\"Path\", \"Machine\"\\); & \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\" --version)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell($userPath = [Environment]::GetEnvironmentVariable\\(\"Path\", \"User\"\\); Write-Output \"Before:`n$userPath`n\"; $oldBin = \"C:\\\\Program Files\\\\Git\\\\bin\"; $oldCmd = \"C:\\\\Program Files\\\\Git\\\\cmd\"; $newBin = \"H:\\\\Git\\\\bin\"; $newCmd = \"H:\\\\Git\\\\cmd\"; $userPath = $userPath -replace [regex]::Escape\\($oldBin\\), $newBin; $userPath = $userPath -replace [regex]::Escape\\($oldCmd\\), $newCmd; $userPath = \\($userPath -split ';' | Where-Object { $_ -and $_ -ne '' } | Select-Object -Unique\\) -join ';'; [Environment]::SetEnvironmentVariable\\(\"Path\", $userPath, \"User\"\\); Write-Output \"After:`n$userPath\")",
+      "PowerShell(Write-Output \"H:\\\\Git exists: $\\(Test-Path H:\\\\Git\\)\"; if \\(Test-Path H:\\\\Git\\) { Get-ChildItem H:\\\\Git | Select-Object Name, PSIsContainer })",
+      "PowerShell(Write-Output \"C:\\\\Program Files\\\\Git exists: $\\(Test-Path 'C:\\\\Program Files\\\\Git'\\)\"; if \\(Test-Path 'C:\\\\Program Files\\\\Git'\\) { Write-Output \"--- Contents ---\"; Get-ChildItem 'C:\\\\Program Files\\\\Git' -Directory | Select-Object Name }; Write-Output \"--- H:\\\\Git contents ---\"; Get-ChildItem H:\\\\Git -ErrorAction SilentlyContinue | Measure-Object | Select-Object Count)",
+      "PowerShell($env:Path = \"H:\\\\Git\\\\bin;H:\\\\Git\\\\cmd;\" + [Environment]::GetEnvironmentVariable\\(\"Path\", \"User\"\\) + \";\" + [Environment]::GetEnvironmentVariable\\(\"Path\", \"Machine\"\\); & \"H:\\\\Git\\\\bin\\\\git.exe\" --version; Write-Output \"--- Global config ---\"; & \"H:\\\\Git\\\\bin\\\\git.exe\" config --global --list)"
+    ]
+  },
+  "skills": {
+    "directories": [
+      "./.claude/skills"
+    ]
+  }
+}
