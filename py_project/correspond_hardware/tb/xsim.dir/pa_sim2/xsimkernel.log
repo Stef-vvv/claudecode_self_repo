@@ -1,7 +1,0 @@
-Running: xsim.dir/pa_sim2/xsimk.exe -runall -simmode gui -wdb pa_sim2.wdb -simrunnum 0 -socket 65120
-Design successfully loaded
-Design Loading Memory Usage: 8100 KB (Peak: 8100 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 8608 KB (Peak: 8608 KB)
-Simulation CPU Usage: 0 ms

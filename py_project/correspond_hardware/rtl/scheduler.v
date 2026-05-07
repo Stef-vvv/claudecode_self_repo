@@ -1,8 +1,17 @@
 // ===========================================================================
-// Scheduler.v — RS Tile调度器 (输出在negedge更新, posedge前稳定)
+// Scheduler.v — RS Tile调度器 (全posedge clk, nxt_state驱动输出)
 // ===========================================================================
-// 关键时序: 输出在negedge clk更新 → 在下一个posedge前已稳定 → PE正确采样.
-// 状态机在posedge转换, 输出在negedge反映新状态的值.
+// 对应Python: ed_run/scheduler.py — 单tile RS时序
+//
+// 关键设计: 输出由nxt_state(组合逻辑)决定, 在posedge寄存.
+// PE在下个posedge采样 → 看到的是上一拍寄存的稳定值.
+//
+// 时序:
+//   posedge0: IDLE+start_tile → nxt_state=FEED0, 输出: start=1,ni_d=1,row0
+//   posedge1: PE(0,0)采样start+row0, 输出变为: start=0,ni_d=1,row1
+//   posedge2: PE(1,0)采样(row1已在总线), 输出变为: ni_d=1,row2
+//   posedge3: PE(2,0)采样(row2已在总线), 输出变为: ni_d=0
+//   posedge4+: DRAIN等待完成
 // ===========================================================================
 
 `timescale 1ns / 1ps
@@ -38,44 +47,32 @@ module Scheduler #(
 );
 
     localparam IDLE  = 3'd0;
-    localparam FEED0 = 3'd1;   // row0+start+new_in_data
-    localparam FEED1 = 3'd2;   // row1
-    localparam FEED2 = 3'd3;   // row2, 清new_in_data
-    localparam DRAIN = 3'd4;   // 等待完成
+    localparam FEED0 = 3'd1;
+    localparam FEED1 = 3'd2;
+    localparam FEED2 = 3'd3;
+    localparam DRAIN = 3'd4;
     localparam DONE  = 3'd5;
 
-    reg [2:0] state, nxt_state;
+    reg [2:0] state;
     reg [7:0] drain_cnt;
 
-    // ---- FSM状态转换 (posedge) ----
+    // ---- 下一状态 (组合逻辑) ----
+    wire [2:0] nxt_state;
+    assign nxt_state = (state == IDLE  && start_tile)                      ? FEED0 :
+                       (state == IDLE  && !start_tile)                     ? IDLE  :
+                       (state == FEED0)                                    ? FEED1 :
+                       (state == FEED1)                                    ? FEED2 :
+                       (state == FEED2)                                    ? DRAIN :
+                       (state == DRAIN && (array_finished || drain_cnt > 8'd50)) ? DONE :
+                       (state == DRAIN)                                    ? DRAIN :
+                       (state == DONE)                                     ? IDLE  :
+                                                                             IDLE;
+
+    // ---- 状态寄存器 + 输出寄存器 (全部posedge) ----
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            state     <= IDLE;
-            drain_cnt <= 8'd0;
-        end else begin
-            state     <= nxt_state;
-            if (state == DRAIN)
-                drain_cnt <= drain_cnt + 8'd1;
-            else
-                drain_cnt <= 8'd0;
-        end
-    end
-
-    always @(*) begin
-        nxt_state = state;
-        case (state)
-            IDLE:  if (start_tile)                      nxt_state = FEED0;
-            FEED0:                                      nxt_state = FEED1;
-            FEED1:                                      nxt_state = FEED2;
-            FEED2:                                      nxt_state = DRAIN;
-            DRAIN: if (array_finished || drain_cnt > 8'd50) nxt_state = DONE;
-            DONE:                                       nxt_state = IDLE;
-        endcase
-    end
-
-    // ---- 输出更新 (negedge, 在下一个posedge前稳定) ----
-    always @(negedge clk or negedge rst_n) begin
-        if (!rst_n) begin
+            state        <= IDLE;
+            drain_cnt    <= 8'd0;
             start_global <= 1'b0;
             new_in_data  <= 1'b0;
             out_data     <= 0;
@@ -84,14 +81,16 @@ module Scheduler #(
             tile_result  <= 0;
             tile_done    <= 1'b0;
         end else begin
-            // 默认值
-            start_global <= 1'b0;
-            tile_done    <= 1'b0;
+            // 状态更新
+            state     <= nxt_state;
+            tile_done <= 1'b0;
             out_psum_top <= psum_top;
 
-            case (state)
+            // 输出 = f(nxt_state): 寄存后下一拍PE采样
+            case (nxt_state)
                 IDLE: begin
-                    new_in_data <= 1'b0;
+                    start_global <= 1'b0;
+                    new_in_data  <= 1'b0;
                 end
 
                 FEED0: begin
@@ -102,9 +101,10 @@ module Scheduler #(
                 end
 
                 FEED1: begin
-                    new_in_data <= 1'b1;
-                    out_data    <= ifmap_row1;
-                    out_filter  <= filter_row1;
+                    start_global <= 1'b0;
+                    new_in_data  <= 1'b1;
+                    out_data     <= ifmap_row1;
+                    out_filter   <= filter_row1;
                 end
 
                 FEED2: begin
@@ -123,6 +123,12 @@ module Scheduler #(
                     new_in_data <= 1'b0;
                 end
             endcase
+
+            // 排空计数
+            if (nxt_state == DRAIN)
+                drain_cnt <= drain_cnt + 8'd1;
+            else
+                drain_cnt <= 8'd0;
         end
     end
 

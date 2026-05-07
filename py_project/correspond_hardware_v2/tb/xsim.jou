@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri May  8 01:54:53 2026
+# Process ID: 29352
+# Current directory: H:/cc_project/py_project/correspond_hardware/tb
+# Command line: xsim.exe -mode tcl -source {xsim.dir/pa_sim/xsim_script.tcl}
+# Log file: H:/cc_project/py_project/correspond_hardware/tb/xsim.log
+# Journal file: H:/cc_project/py_project/correspond_hardware/tb\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/pa_sim/xsim_script.tcl
+run -all

@@ -1,1 +1,0 @@
--L "xil_defaultlib" -s "pa_sim2" "pe_array_tb" 

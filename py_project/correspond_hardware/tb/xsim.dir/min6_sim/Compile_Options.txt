@@ -1,0 +1,1 @@
+-L "xil_defaultlib" -s "min6_sim" "min6_tb" 
