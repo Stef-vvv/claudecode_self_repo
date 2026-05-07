@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri May  8 00:34:25 2026
+# Process ID: 17820
+# Current directory: H:/cc_project/py_project/correspond_hardware/tb
+# Command line: wbtcv.exe -mode batch -source H:/cc_project/py_project/correspond_hardware/tb/xsim.dir/pa_sim/webtalk/xsim_webtalk.tcl -notrace
+# Log file: H:/cc_project/py_project/correspond_hardware/tb/webtalk.log
+# Journal file: H:/cc_project/py_project/correspond_hardware/tb\webtalk.jou
+#-----------------------------------------------------------
+source H:/cc_project/py_project/correspond_hardware/tb/xsim.dir/pa_sim/webtalk/xsim_webtalk.tcl -notrace

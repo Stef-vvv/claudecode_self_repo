@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/py_project/correspond_hardware/rtl/pe.v" into library work
+INFO: [VRFC 10-311] analyzing module PE
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/py_project/correspond_hardware/rtl/pe_array.v" into library work
+INFO: [VRFC 10-311] analyzing module PE_Array
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/py_project/correspond_hardware/tb/pe_array_tb.v" into library work
+INFO: [VRFC 10-311] analyzing module pe_array_tb

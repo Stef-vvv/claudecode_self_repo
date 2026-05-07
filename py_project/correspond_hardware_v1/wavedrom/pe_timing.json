@@ -1,0 +1,30 @@
+{
+  "signal": [
+    {"name": "clk", "wave": "p......", "period": 2},
+    {"name": "rst_n", "wave": "0......"},
+    {},
+    {"name": "start", "wave": "10....."},
+    {"name": "new_in_data", "wave": "10....."},
+    {"name": "in_data[24:0]", "wave": "2......", "data": "{1,2,3,4,5}"},
+    {"name": "in_filter[23:0]", "wave": "2......", "data": "{1,1,1}"},
+    {"name": "in_result[47:0]", "wave": "2......", "data": "{0,0,0}"},
+    {},
+    {"name": "state", "wave": "3.45...", "data": ["IDLE(0)", "MAC(1)", "ACC(2)", "DONE(3)", "IDLE(0)"]},
+    {"name": "iter", "wave": "3.45...", "data": ["0->1", "1->2", "2->0", "0", "0"]},
+    {"name": "data_r[0:4]", "wave": "x2.....", "data": "[1,2,3,4,5]"},
+    {"name": "filt_r[0:2]", "wave": "x2.....", "data": "[1,1,1]"},
+    {},
+    {"name": "dot(0)=6", "wave": "x......"},
+    {"name": "dot(1)=9", "wave": "0.x...."},
+    {"name": "dot(2)=12", "wave": "0..x..."},
+    {"name": "result_r[0]", "wave": "x.2....", "data": "6"},
+    {"name": "result_r[1]", "wave": "x..2...", "data": "9"},
+    {"name": "result_r[2]", "wave": "x...2..", "data": "12"},
+    {},
+    {"name": "out_start", "wave": "0.10..."},
+    {"name": "finished", "wave": "0....10"},
+    {"name": "out_result[47:0]", "wave": "x...2..", "data": "{6,9,12}"}
+  ],
+  "head": {"text": "PE Timing — 5-cycle FSM (data=[1,2,3,4,5], filter=[1,1,1])"},
+  "foot": {"text": "Cycle0: start+new_in_data → latch data/filt, dot(0)=6, out_start=1. Cycle1: dot(1)=9, out_start=0. Cycle2: dot(2)=12, →ACC. Cycle3: ACC→DONE, finished=1. Cycle4: →IDLE."}
+}

@@ -1,0 +1,7 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+H:/cc_project/py_project/correspond_hardware/rtl/pe.v,1778171035,verilog,,H:/cc_project/py_project/correspond_hardware/rtl/pe_array.v,,PE,,,,,,,,
+H:/cc_project/py_project/correspond_hardware/rtl/pe_array.v,1778171176,verilog,,H:/cc_project/py_project/correspond_hardware/tb/pe_array_tb.v,,PE_Array,,,,,,,,
+H:/cc_project/py_project/correspond_hardware/tb/pe_array_tb.v,1778171646,verilog,,,,pe_array_tb,,,,,,,,

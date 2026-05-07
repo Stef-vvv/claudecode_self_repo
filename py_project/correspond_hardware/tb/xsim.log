@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri May  8 01:15:03 2026
+# Process ID: 27936
+# Current directory: H:/cc_project/py_project/correspond_hardware/tb
+# Command line: xsim.exe -mode tcl -source {xsim.dir/pa_sim2/xsim_script.tcl}
+# Log file: H:/cc_project/py_project/correspond_hardware/tb/xsim.log
+# Journal file: H:/cc_project/py_project/correspond_hardware/tb\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/pa_sim2/xsim_script.tcl
+# xsim {pa_sim2} -autoloadwcfg -runall
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+run -all
+=== TEST 1: Same Data — Vertical Accumulation ===
+  PASS
+=== TEST 2: RS Dataflow ===
+  PASS
+
+=== ALL TESTS PASSED ===
+$finish called at time : 265 ns : File "H:/cc_project/py_project/correspond_hardware/tb/pe_array_tb.v" Line 119
+exit
+INFO: [Common 17-206] Exiting xsim at Fri May  8 01:15:07 2026...
