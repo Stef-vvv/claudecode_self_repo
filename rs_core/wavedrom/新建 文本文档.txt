@@ -1,0 +1,21 @@
+{signal: [
+  {name: 'clk', wave: 'p........'},
+  {name: 'rst', wave: '01........'},
+
+  {name: 'start', wave: '0.1x....'},
+  {name: '[1:0] state', wave: '3..5..573', data: ['IDLE', 'MAC', 'ACC', 'DONE', 'IDLE']},
+  {name: 'finished', wave: '0......10'},
+  {name: 'out_start', wave: '0..1.0..'},
+  {name: '[1:0] iter', wave: '2...22..', data: ['0', '1', '2', '']},
+  {name: '[IN_WIDTH-1:0] data [0:4]', wave: 'xxx5....', data: ['{d4,d3,d2,d1,d0}', '', '', '']},
+  {name: '[W_WIDTH-1:0]  filt [0:2]', wave: 'xxx5....',data: ['{f2,f1,f0}', '', '', '']},
+  {name: '  [ACC_WIDTH-1:0] dot', wave: 'x..573..',data: ['a', 'b', 'c', '']},  
+  {name: '[ACC_WIDTH-1:0] result [0:2]', wave: 'x...7357',data: ['{xxa}', '{xba}', '{ccc}', '{ppp}']},
+  
+  
+  {},
+  {name: 'in_data', wave: 'x.......'},
+  {name: 'in_filter', wave: 'x.......'},
+  {name: 'in_partial', wave: 'xx......'},
+
+]}

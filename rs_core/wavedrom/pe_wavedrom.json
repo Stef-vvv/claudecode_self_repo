@@ -1,0 +1,30 @@
+{
+  "signal": [
+    {"name": "clk", "wave": "p.....", "period": 2},
+    {"name": "start", "wave": "10....", "phase": 0.5},
+    {"name": "new_in_data", "wave": "10....", "phase": 0.5},
+    {"name": "in_data[4:0]", "wave": "2....."},
+    {"name": "in_filter[2:0]", "wave": "2....."},
+    {"name": "in_result[2:0]", "wave": "2....."},
+    {},
+    {"name": "state", "wave": "3.45..", "data": ["IDLE", "MAC", "ACC", "DONE", "IDLE"]},
+    {"name": "iter", "wave": "3.45..", "data": ["0", "1", "2", "0", "0"]},
+    {"name": "data[4:0] (reg)", "wave": "x2....", "data": ["[1,2,3,4,5]"]},
+    {"name": "filt[2:0] (reg)", "wave": "x2....", "data": ["[1,1,1]"]},
+    {},
+    {"name": "out_start", "wave": "0.10.."},
+    {"name": "dot (combinational)", "wave": "x3.4..", "data": ["dot(0)=6", "dot(1)=9", "dot(2)=12"]},
+    {"name": "result[0] (reg)", "wave": "x.2...", "data": ["6"]},
+    {"name": "result[1] (reg)", "wave": "x..2..", "data": ["9"]},
+    {"name": "result[2] (reg)", "wave": "x...2.", "data": ["12"]},
+    {"name": "finished", "wave": "0...10"},
+    {"name": "out_result[2:0]", "wave": "x...2.", "data": ["[6,9,12]"]}
+  ],
+  "head": {
+    "text": "PE Timing Diagram — Basic MAC (data=[1,2,3,4,5], filter=[1,1,1])",
+    "tick": 0
+  },
+  "foot": {
+    "text": "5 cycles: IDLE→MAC(3dot)→ACC→DONE→IDLE. out_start high for 2 cycles (iter0, iter1)."
+  }
+}

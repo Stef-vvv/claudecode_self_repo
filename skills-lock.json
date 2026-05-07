@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "claude-skill-verilog": {
+      "source": "londey/claude-skill-verilog",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "b656f685c4b0757cae371fba676404f26ee7e1e6d80d90fa1b0e36986dc96e44"
+    },
+    "fpga": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "skillPath": "fpga/SKILL.md",
+      "computedHash": "9b8f8273eaa5ecc9bd1b1c5af6629da383ff5f5d400caef322c16ab2598ed0c4"
+    },
+    "systemverilog": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "skillPath": "systemverilog/SKILL.md",
+      "computedHash": "77f60ffdad57204f4b175cdfdc136cd2b91835d202885f3f335b06da7a2daf85"
+    }
+  }
+}
