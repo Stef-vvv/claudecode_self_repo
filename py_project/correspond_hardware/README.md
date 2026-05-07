@@ -7,10 +7,13 @@ correspond_hardware/
 ├── rtl/
 │   ├── pe.v              # PE处理单元 (无for/generate, 已验证)
 │   ├── pe_array.v        # PE Array 3×3阵列 (无generate, 9PE逐例化, 已验证)
-│   └── scheduler.v       # 简版Scheduler FSM (待系统仿真验证)
+│   ├── scheduler.v       # RS Tile调度器 (negedge输出, 已验证)
+│   ├── aggregator.v      # 部分和累加器 (已验证)
+│   └── rs_top.v          # 顶层集成 (已验证)
 ├── tb/
-│   ├── pe_tb.v           # PE测试平台 (4测试全部PASS)
-│   ├── pe_array_tb.v     # PE Array测试平台 (2测试全部PASS)
+│   ├── pe_tb.v           # PE测试平台 (4/4 PASS)
+│   ├── pe_array_tb.v     # PE Array测试平台 (2/2 PASS)
+│   ├── rs_top_tb.v       # 系统测试平台 (3/3 PASS)
 │   └── run_pe_sim.tcl    # Vivado仿真脚本 (示例)
 ├── wavedrom/
 │   ├── pe_timing.json         # PE 5拍时序图
@@ -72,6 +75,20 @@ correspond_hardware/
 === TEST 1: Same Data Accumulation ===  3行相同数据累加 → [42,60,78]                 PASS
 === TEST 2: RS Dataflow ===             3拍不同数据/滤波器 → [411,456,501]            PASS
 ```
+
+### 系统仿真结果 (Scheduler + PE Array + Aggregator)
+
+```
+=== Test1: RS Dataflow ===    data[1..15], filter[1..9] → [411,456,501]            PASS
+=== Test2: All-ones ===       相同数据, 全1滤波器 → [18,27,36]                       PASS
+=== Test3: Accumulation ===   部分和=[100,200,300] → [118,227,336]                    PASS
+```
+
+### Scheduler关键设计点
+
+**negedge输出时序**: Scheduler的控制和数据输出在negedge clk更新。这确保在posedge clk（PE采样时刻）之前，数据总线已稳定半个周期。这是从多次仿真调试中得出的关键设计决策。
+
+FSM流程: IDLE → FEED0(row0+start) → FEED1(row1) → FEED2(row2,清new_in_data) → DRAIN(等待) → DONE(捕获)
 
 ### 运行仿真
 
