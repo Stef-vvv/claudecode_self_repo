@@ -64,6 +64,7 @@ module pe_array_tb;
         @(negedge clk); new_in_data = 0;    // T3: 清除
 
         wait(out_finished == 1'b1);
+        #1;  // 等组合逻辑稳定
         if (out_result[0*ACC_WIDTH +: ACC_WIDTH] != 16'd42 ||
             out_result[1*ACC_WIDTH +: ACC_WIDTH] != 16'd60 ||
             out_result[2*ACC_WIDTH +: ACC_WIDTH] != 16'd78) begin
@@ -74,11 +75,18 @@ module pe_array_tb;
             test_pass = 0;
         end else $display("  PASS");
 
+        // 等待流水线完全排空 (所有PE回到IDLE, out_finished回到0)
+        wait(out_finished == 1'b0);
+        // 额外等几拍确保最慢的PE(2,2)也回到IDLE
+        repeat(10) @(posedge clk);
+        // 确保start_global/new_in_data已清零
+        start_global = 0; new_in_data = 0;
+        @(negedge clk);
+
         // ====================================
-        // Test2: RS数据流 — 复位后重新开始
+        // Test2: RS数据流 — 不复位, 自然排空后重新开始
         // ====================================
         $display("=== TEST 2: RS Dataflow ===");
-        do_reset;
 
         // T0
         @(negedge clk);

@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri May  8 13:09:06 2026
+# Process ID: 5316
+# Current directory: H:/cc_project/rs_project/tb
+# Command line: xsim.exe -mode tcl -source {xsim.dir/pa_sim/xsim_script.tcl}
+# Log file: H:/cc_project/rs_project/tb/xsim.log
+# Journal file: H:/cc_project/rs_project/tb\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/pa_sim/xsim_script.tcl
+# xsim {pa_sim} -autoloadwcfg -runall
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+run -all
+=== TEST 1: Same Data — Vertical Accumulation ===
+  PASS
+=== TEST 2: RS Dataflow ===
+  PASS
+
+=== ALL TESTS PASSED ===
+$finish called at time : 355 ns : File "H:/cc_project/rs_project/tb/pe_array_tb.v" Line 127
+exit
+INFO: [Common 17-206] Exiting xsim at Fri May  8 13:09:10 2026...
