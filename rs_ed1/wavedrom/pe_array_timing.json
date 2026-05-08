@@ -1,0 +1,21 @@
+{
+  "signal": [
+    {"name": "clk", "wave": "p.........", "period": 2},
+    {"name": "rst_n", "wave": "0........."},
+    {},
+    {"name": "start_global", "wave": "10........"},
+    {"name": "new_in_data", "wave": "1.0......."},
+    {"name": "in_data[24:0]", "wave": "2.2.2.....", "data": "row0","row1","row2"},
+    {"name": "in_filter[23:0]", "wave": "2.2.2.....", "data": "f0","f1","f2"},
+    {},
+    {"name": "os_00 (PE00.out_start)", "wave": "0.10......"},
+    {"name": "os_10 (PE10.out_start)", "wave": "0.0.10...."},
+    {"name": "os_20 (PE20.out_start)", "wave": "0.0.0.10.."},
+    {},
+    {"name": "fin_20 (PE20.finished)", "wave": "0......10."},
+    {"name": "out_finished", "wave": "0......10."},
+    {"name": "out_result[47:0]", "wave": "0..=......", "data": "{r2,r1,r0}"}
+  ],
+  "head": {"text": "PE Array 3x3 — RS Dataflow Timing (Simulation-verified)", "tick": 0},
+  "foot": {"text": "start_global=1 at T0→PE(0,0) starts→out_start=1→PE(1,0) at T1→PE(2,0) at T2→finished at T6. out_finished=1 for 1 cycle.", "tock": 1}
+}

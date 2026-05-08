@@ -1,0 +1,10 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+H:/cc_project/rs_ed1/rtl/aggregator_6array.v,1778219303,verilog,,H:/cc_project/rs_ed1/rtl/rs_top_6array.v,,aggregator_6array,,,,,,,,
+H:/cc_project/rs_ed1/rtl/pe.v,1778219143,verilog,,H:/cc_project/rs_ed1/rtl/pe_array.v,,PE,,,,,,,,
+H:/cc_project/rs_ed1/rtl/pe_array.v,1778219143,verilog,,H:/cc_project/rs_ed1/rtl/scheduler_6array.v,,PE_Array,,,,,,,,
+H:/cc_project/rs_ed1/rtl/rs_top_6array.v,1778219351,verilog,,H:/cc_project/rs_ed1/tb/tb_rs_top.v,,rs_top_6array,,,,,,,,
+H:/cc_project/rs_ed1/rtl/scheduler_6array.v,1778219250,verilog,,H:/cc_project/rs_ed1/rtl/aggregator_6array.v,,scheduler_6array,,,,,,,,
+H:/cc_project/rs_ed1/tb/tb_rs_top.v,1778219387,verilog,,,,tb_rs_top,,,,,,,,

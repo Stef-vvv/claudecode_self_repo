@@ -1,0 +1,1 @@
+-L "xil_defaultlib" -s "ed1_sim" "tb_rs_top" 

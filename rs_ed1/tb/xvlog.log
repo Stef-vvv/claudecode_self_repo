@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/rs_ed1/rtl/pe.v" into library work
+INFO: [VRFC 10-311] analyzing module PE
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/rs_ed1/rtl/pe_array.v" into library work
+INFO: [VRFC 10-311] analyzing module PE_Array
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/rs_ed1/rtl/scheduler_6array.v" into library work
+INFO: [VRFC 10-311] analyzing module scheduler_6array
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/rs_ed1/rtl/aggregator_6array.v" into library work
+INFO: [VRFC 10-311] analyzing module aggregator_6array
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/rs_ed1/rtl/rs_top_6array.v" into library work
+INFO: [VRFC 10-311] analyzing module rs_top_6array
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/cc_project/rs_ed1/tb/tb_rs_top.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_rs_top

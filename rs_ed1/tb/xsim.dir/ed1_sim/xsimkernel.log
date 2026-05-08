@@ -1,0 +1,7 @@
+Running: xsim.dir/ed1_sim/xsimk.exe -runall -simmode gui -wdb ed1_sim.wdb -simrunnum 0 -socket 65488
+Design successfully loaded
+Design Loading Memory Usage: 9308 KB (Peak: 9308 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 9932 KB (Peak: 9932 KB)
+Simulation CPU Usage: 0 ms

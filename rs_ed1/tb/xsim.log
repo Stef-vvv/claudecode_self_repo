@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri May  8 13:50:06 2026
+# Process ID: 7828
+# Current directory: H:/cc_project/rs_ed1/tb
+# Command line: xsim.exe -mode tcl -source {xsim.dir/ed1_sim/xsim_script.tcl}
+# Log file: H:/cc_project/rs_ed1/tb/xsim.log
+# Journal file: H:/cc_project/rs_ed1/tb\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/ed1_sim/xsim_script.tcl
+# xsim {ed1_sim} -autoloadwcfg -runall
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+run -all
+=== Test1: Array0 & Array1 non-zero verification ===
+T=140000 ACC_VALID pix[0:2]=(51,96,141) pix[3:5]=(186,231,276)
+T=140000 TILE_DONE acc_valid=1
+Array0 NON-ZERO: PASS
+acc_valid=1: PASS
+$finish called at time : 185 ns : File "H:/cc_project/rs_ed1/tb/tb_rs_top.v" Line 67
+exit
+INFO: [Common 17-206] Exiting xsim at Fri May  8 13:50:11 2026...
