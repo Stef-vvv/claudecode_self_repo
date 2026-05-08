@@ -1,0 +1,1 @@
+-L "xil_defaultlib" -s "verify_sim" "rs_top_tb" 

@@ -1,7 +1,0 @@
-Running: xsim.dir/a6_sim2/xsimk.exe -runall -simmode gui -wdb a6_sim2.wdb -simrunnum 0 -socket 54532
-Design successfully loaded
-Design Loading Memory Usage: 9308 KB (Peak: 9308 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 9876 KB (Peak: 9876 KB)
-Simulation CPU Usage: 0 ms

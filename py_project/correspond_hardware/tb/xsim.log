@@ -2,20 +2,26 @@
 # xsim v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri May  8 02:38:16 2026
-# Process ID: 22724
+# Start of session at: Fri May  8 10:51:33 2026
+# Process ID: 23000
 # Current directory: H:/cc_project/py_project/correspond_hardware/tb
-# Command line: xsim.exe -mode tcl -source {xsim.dir/bypass6_sim/xsim_script.tcl}
+# Command line: xsim.exe -mode tcl -source {xsim.dir/verify_sim/xsim_script.tcl}
 # Log file: H:/cc_project/py_project/correspond_hardware/tb/xsim.log
 # Journal file: H:/cc_project/py_project/correspond_hardware/tb\xsim.jou
 #-----------------------------------------------------------
-source xsim.dir/bypass6_sim/xsim_script.tcl
-# xsim {bypass6_sim} -autoloadwcfg -runall
+source xsim.dir/verify_sim/xsim_script.tcl
+# xsim {verify_sim} -autoloadwcfg -runall
 Vivado Simulator 2020.2
 Time resolution is 1 ps
 run -all
-Arr0: (96,141,186) expect=(411,456,501)
-Arr1: (321,366,411)
-$finish called at time : 95 ns : File "H:/cc_project/py_project/correspond_hardware/tb/bypass6_tb.v" Line 56
+=== Test1: RS Dataflow [411,456,501] ===
+  PASS
+=== Test2: All-ones [18,27,36] ===
+  PASS
+=== Test3: Accumulation [118,227,336] ===
+  PASS
+
+=== ALL SYSTEM TESTS PASSED ===
+$finish called at time : 455 ns : File "H:/cc_project/py_project/correspond_hardware/tb/rs_top_tb.v" Line 174
 exit
-INFO: [Common 17-206] Exiting xsim at Fri May  8 02:38:20 2026...
+INFO: [Common 17-206] Exiting xsim at Fri May  8 10:51:37 2026...

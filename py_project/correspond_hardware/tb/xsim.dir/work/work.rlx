@@ -2,11 +2,9 @@
 2020.2
 Nov 18 2020
 09:47:47
-H:/cc_project/py_project/correspond_hardware/rtl/aggregator_6array.v,1778178331,verilog,,H:/cc_project/py_project/correspond_hardware/rtl/rs_top_6array.v,,Aggregator_6array,,,,,,,,
+H:/cc_project/py_project/correspond_hardware/rtl/aggregator.v,1778175715,verilog,,H:/cc_project/py_project/correspond_hardware/rtl/rs_top.v,,Aggregator,,,,,,,,
 H:/cc_project/py_project/correspond_hardware/rtl/pe.v,1778174084,verilog,,H:/cc_project/py_project/correspond_hardware/rtl/pe_array.v,,PE,,,,,,,,
-H:/cc_project/py_project/correspond_hardware/rtl/pe_array.v,1778174051,verilog,,H:/cc_project/py_project/correspond_hardware/tb/bypass6_tb.v,,PE_Array,,,,,,,,
-H:/cc_project/py_project/correspond_hardware/rtl/rs_top_6array.v,1778178375,verilog,,H:/cc_project/py_project/correspond_hardware/tb/rs_top_6array_tb.v,,rs_top_6array,,,,,,,,
-H:/cc_project/py_project/correspond_hardware/rtl/scheduler_6array.v,1778178841,verilog,,H:/cc_project/py_project/correspond_hardware/tb/min6_tb.v,,Scheduler_6array,,,,,,,,
-H:/cc_project/py_project/correspond_hardware/tb/bypass6_tb.v,1778179090,verilog,,,,bypass6_tb,,,,,,,,
-H:/cc_project/py_project/correspond_hardware/tb/min6_tb.v,1778179004,verilog,,,,min6_tb,,,,,,,,
-H:/cc_project/py_project/correspond_hardware/tb/rs_top_6array_tb.v,1778178909,verilog,,,,rs_top_6array_tb,,,,,,,,
+H:/cc_project/py_project/correspond_hardware/rtl/pe_array.v,1778174051,verilog,,H:/cc_project/py_project/correspond_hardware/rtl/scheduler.v,,PE_Array,,,,,,,,
+H:/cc_project/py_project/correspond_hardware/rtl/rs_top.v,1778175746,verilog,,H:/cc_project/py_project/correspond_hardware/tb/rs_top_tb.v,,rs_top,,,,,,,,
+H:/cc_project/py_project/correspond_hardware/rtl/scheduler.v,1778178152,verilog,,H:/cc_project/py_project/correspond_hardware/rtl/aggregator.v,,Scheduler,,,,,,,,
+H:/cc_project/py_project/correspond_hardware/tb/rs_top_tb.v,1778176267,verilog,,,,rs_top_tb,,,,,,,,

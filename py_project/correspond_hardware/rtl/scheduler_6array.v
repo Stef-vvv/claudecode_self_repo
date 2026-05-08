@@ -63,7 +63,7 @@ module Scheduler_6array #(
     input  wire                          arr_finished5,
 
     // 输出 (任一阵列完成即通知aggregator)
-    output reg                           any_finished,
+    output wire                          any_finished,     // 组合逻辑: arr_finished OR
     output reg                           tile_done
 );
 
@@ -76,9 +76,9 @@ module Scheduler_6array #(
 
     reg [2:0] state;
     reg [7:0] drain_cnt;
-    wire any_arr_finished;
-    assign any_arr_finished = arr_finished0 | arr_finished1 | arr_finished2 |
-                              arr_finished3 | arr_finished4 | arr_finished5;
+    // any_finished = 任一阵列完成 (组合逻辑, 直连aggregator)
+    assign any_finished = arr_finished0 | arr_finished1 | arr_finished2 |
+                          arr_finished3 | arr_finished4 | arr_finished5;
 
     // ---- 下一状态 (含default防止死锁) ----
     wire [2:0] nxt_state;
@@ -87,7 +87,7 @@ module Scheduler_6array #(
                        (state == FEED0)                               ? FEED1 :
                        (state == FEED1)                               ? FEED2 :
                        (state == FEED2)                               ? DRAIN :
-                       (state == DRAIN && (any_arr_finished || drain_cnt > 8'd50)) ? DONE :
+                       (state == DRAIN && (any_finished || drain_cnt > 8'd50)) ? DONE :
                        (state == DRAIN)                               ? DRAIN :
                        (state == DONE)                                ? IDLE  :
                                                                         IDLE;  // default: 回到IDLE
@@ -132,11 +132,10 @@ module Scheduler_6array #(
             out_data0 <= 0; out_data1 <= 0; out_data2 <= 0;
             out_data3 <= 0; out_data4 <= 0; out_data5 <= 0;
             out_filter <= 0; out_psum_top <= 0;
-            tile_done <= 1'b0; any_finished <= 1'b0;
+            tile_done <= 1'b0;
         end else begin
             state     <= nxt_state;
             tile_done <= 1'b0;
-            any_finished <= 1'b0;
             out_psum_top <= psum_top;
 
             case (nxt_state)
@@ -168,7 +167,6 @@ module Scheduler_6array #(
 
                 DRAIN: begin
                     new_in_data <= 1'b0;
-                    if (any_arr_finished) any_finished <= 1'b1;
                 end
 
                 DONE: begin
