@@ -1,0 +1,50 @@
+# Vivado simulation artifacts
+xsim.dir/
+xsim*.log
+xsim*.jou
+xsim_*.backup.*
+webtalk*.log
+webtalk*.jou
+webtalk_*.backup.*
+xelab.log
+xelab.pb
+xvlog.log
+xvlog.pb
+*.sdb
+*.exe
+*.pb
+*.rtti
+*.reloc
+*.svtype
+*.type
+*.xdbg
+*.dbg
+*.mem
+*.rlx
+work.rlx
+work/
+
+# Build outputs
+*.out
+*.o
+
+# Backup files
+*.backup
+*.backup.jou
+*.backup.log
+
+# Vivado project files
+.vs/
+.xdc/
+.mem/
+.png/
+
+# IDE files
+.vs/
+*.suo
+*.db
+
+# Python cache
+__pycache__/
+*.pyc
+cc_project/

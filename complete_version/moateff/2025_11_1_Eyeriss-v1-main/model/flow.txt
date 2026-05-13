@@ -1,0 +1,20 @@
+software automation: for alexnet (pythorch model)
+-------------------
+1 ) image resizing (to 227 x 227 x 3) 
+2) image jpeg to .txt (227 x 227 x 3)binary represented to Q3.13 
+3) image segmentation to 8 segments (ifmap divide.py)
+4) write each 4 pixels into one word (MM_word_split_merge.py) >> need to handle not divisible by 4 (add zeros in last row if not 64 bit) 
+5) apply conv (conv1.py) need to be generalized to any parameters 
+6) apply relu (apply_relu.py)
+7) apply maxpooling( for conv1) 
+8) apply conv2
+9) apply relu  
+10) apply max2
+11) apply conv3
+12) apply relu
+13) apply conv4
+14) apply relu 
+15) apply conv5
+16) apply relu 
+17) apply max3
+18) fully-connected 

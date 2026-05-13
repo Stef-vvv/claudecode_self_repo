@@ -1,0 +1,22 @@
+
+****** xsim v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/step1_sim/xsim_script.tcl
+# xsim {step1_sim} -autoloadwcfg -runall
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+run -all
+========================================
+ STEP 1: GLB Backdoor Write/Read Test
+========================================
+
+--- Test 1: IFMAP GLB write/read ---
+Wrote 64 test values to IFMAP GLB
+
+--- Test 2: FILTER GLB write/read ---
+Wrote 9 test values to FILTER GLB
+
+--- Test 3: Load scan chain ---

@@ -1,0 +1,14 @@
+M = 8     // the number of filters
+C = 6     // the number of channels
+N = 1       // the number of ifmaps
+W = 5      // the width of ifmap
+H = 5      // the height of ifmap
+R = 3       // the width of filter
+S = 3       // the height of filter
+E = 2      // the width of ofmap
+F = 2      // the height of ofmap
+n = 1       // the number of ifmaps used in a processing pass
+p = 4      // the number of filters processed by a PE set
+q = 3       // the number of channels processed by a PE set
+r = 2       // the number of PE sets that process different channels in the PE array
+t = 2       // the number of PE sets that process different filters in the PE array

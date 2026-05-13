@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/moateff_test/sim/shared_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/moateff_test/sim/file_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/moateff_test/sim/fifo_if_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/moateff_test/sim/glb_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/moateff_test/sim/cfg_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/moateff_test/sim/load_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/moateff_test/sim/layer_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/moateff_test/sim/test_pkg.sv" into library work
